@@ -27,9 +27,9 @@ bool magicSquare(int matrix[][SIZE]) {
 	for(int x = 0; x < SIZE; x++){//se verifican las sumas de las columnas
 		int colSum = 0;//se calcula fila de columna "x"
                 for(int y = 0; y < SIZE; y++){
-                        rowSum += matrix[x][y];
+                        colSum += matrix[x][y];
                 }
-                if (rowSum != magicSum) return false;//si se demuestra lo contrario retorna falso
+                if (colSum != magicSum) return false;//si se demuestra lo contrario retorna falso
         }
 
 	return true; //debe ser verdadero que es una matriz mágica, ya que no se demostró lo contrario
@@ -58,8 +58,8 @@ int main() {
 	};
 
 	
-	printf("La matriz utilizada es cuadrado mágico?: %d\n", magicSquare(matrix[][]));
-	print("la matriz utilizada fue:");
+	printf("La matriz utilizada es cuadrado mágico?: %d\n", magicSquare(matrix));
+	printf("la matriz utilizada fue:");
 	printMatrix(matrix);
 
 	return 0;
