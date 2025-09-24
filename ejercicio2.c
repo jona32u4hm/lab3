@@ -58,10 +58,10 @@ int main() {
 	};
 
 	
-	printf("La matriz utilizada es cuadrado mágico?: %d\n", magicSquare(matrix));
-	printf("la matriz utilizada fue:");
+	
+	printf("la matriz utilizada fue:\n");
 	printMatrix(matrix);
-
+	printf("%s es un cuadrado mágico\n", magicSquare(matrix) ? "Sí" : "No");
 	return 0;
 }
 	
