@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
-#define SIZE 3
+#define SIZE 4
 
 bool magicSquare(int matrix[][SIZE]) {
 	//se va a asumir que la matriz es mágica hasta que se demuestre lo contrario. si no se demuestra lo contrario, al final se retorna true, de otra forma retorna false
@@ -41,7 +41,7 @@ void fillRandomly(int matrix[][SIZE]){//llena una matriz con números random
 	srand(time(NULL));
 	for(int y = 0; y < SIZE; y++){
                 for(int x = 0; x < SIZE; x++){
-                        matrix[x][y] = rand()%10; //genera un dígito random
+                        matrix[x][y] = rand()%100; //genera un valor random menor a 100
                 }
         }
 }
@@ -60,9 +60,10 @@ void printMatrix(int matrix[][SIZE]) { //imprime una matriz
 
 int main() {
 	int matrix[SIZE][SIZE] = {
-		{2, 7, 6},
-		{9, 5, 1},
-		{4, 3, 8}
+		{16, 3, 2,13},
+		{ 5,10,11, 8},
+		{ 9, 6, 7,12},
+		{ 4,15,14, 1}
 	};
 
 	
