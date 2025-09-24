@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
-
+#include <stdlib.h>
+#include <time.h>
 #define SIZE 3
 
 bool magicSquare(int matrix[][SIZE]) {
@@ -36,14 +37,21 @@ bool magicSquare(int matrix[][SIZE]) {
 }
 
 
+void fillRandomly(int matrix[][SIZE]){//llena una matriz con números random
+	srand(time(NULL));
+	for(int y = 0; y < SIZE; y++){
+                for(int x = 0; x < SIZE; x++){
+                        matrix[x][y] = rand()%10; //genera un dígito random
+                }
+        }
+}
 
-
-void printMatrix(int matrix[][SIZE]) {
+void printMatrix(int matrix[][SIZE]) { //imprime una matriz
         for(int y = 0; y < SIZE; y++){
 		for(int x = 0; x < SIZE; x++){
-			printf("%d  ",matrix[x][y]);
+			printf("%d  ",matrix[x][y]); //imprimir posición
 		}
-		printf("\n");
+		printf("\n");//siguiente fila!
 	}
 }
 
@@ -62,6 +70,15 @@ int main() {
 	printf("la matriz utilizada fue:\n");
 	printMatrix(matrix);
 	printf("%s es un cuadrado mágico\n", magicSquare(matrix) ? "Sí" : "No");
+
+
+	fillRandomly(matrix);
+        printf("la matriz aleatoria utilizada fue:\n");
+        printMatrix(matrix);
+        printf("%s es un cuadrado mágico\n", magicSquare(matrix) ? "Sí" : "No");
+	
+
+
 	return 0;
 }
 	
