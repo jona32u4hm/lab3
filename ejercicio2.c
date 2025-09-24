@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 #define SIZE 3
 
-int magicSquare(int matrix[][SIZE]) {
+bool magicSquare(int matrix[][SIZE]) {
 	//se va a asumir que la matriz es mágica hasta que se demuestre lo contrario. si no se demuestra lo contrario, al final se retorna true, de otra forma retorna false
 
 	int magicSum = 0; //primero que nada se va a encontrar un posible valor para la suma magica usando la primera diagonal
@@ -57,7 +58,8 @@ int main() {
 	};
 
 	
-	printf("La matriz utilizada corresponde a: %d\n", largestLine);
+	printf("La matriz utilizada es cuadrado mágico?: %d\n", magicSquare(matrix[][]));
+	print("la matriz utilizada fue:");
 	printMatrix(matrix);
 
 	return 0;
